@@ -1,13 +1,16 @@
 import qrcode
 import os, sys
 from PIL import Image , ImageDraw ,ImageFont
+
+from Event.Event import AnEvent
+
 qr = qrcode.QRCode(
     version=1,
     error_correction=qrcode.constants.ERROR_CORRECT_L,
-    box_size=10,
+    box_size=8,
     border=4,
 )
-qr.add_data('Some data')
+qr.add_data('https://certifyme.online/devopsma/sample.html')
 qr.make(fit=True)
 
 img = qr.make_image(fill_color="transparent", back_color="black")
@@ -15,7 +18,7 @@ img.save('./qrcode_test.png')
 
 first_image = Image.open("./AnuMDominic.png")
 second_image = Image.open("./qrcode_test.png")
-first_image.paste(second_image, (0,0),second_image)
+first_image.paste(second_image, (1500,30),second_image)
 
 
 image = Image.new("RGBA", (600,150), (255,255,255,0))
