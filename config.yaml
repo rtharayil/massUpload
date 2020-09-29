@@ -1,0 +1,23 @@
+Program : XP2020
+IssuedBy : Anju M Dominic
+Institution : Quadralogics
+Date : 29 dec 1982
+Text : A write-up about the event
+Template : ./AnuMDominicnew.png
+Logo : ./logo.png
+Message : As your organizations progresses through its DevXOps journey, what are the best practices that successful teams use that you should follow? Discover what separates successful DevXOps teams from those that fail, and learn the next steps to take on your DevXOps journey
+Banner : ./banner.png
+CTAMessage : Download our E-Book to learn more
+CTALink : www.q.com
+Phone : 898654423
+Email : a@p.com
+WebLink : www.qt.com
+Font : ./res/AngelicaCaroline.ttf
+FontSize : 100
+NameX : 150
+NameY : 160
+QRCodeX : 1500
+QRCodeY : 1600
+QRCodeFrontColor : white
+QRCodeBackColor : black
+QRCodeSize : 10

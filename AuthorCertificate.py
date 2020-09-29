@@ -99,9 +99,9 @@ class AuthorCertificate:
         first_image.save(pathToSave +'/'+ unique_filename + '.png')
         return unique_filename + '.png'
 
-    def BulkIssue(self,template,pathToSave,urlHead , certificates):
+    def BulkIssue(self,pathToSave,urlHead , certificates):
 
        
         for cert in certificates.getAllCertificates():
-            self.Create(template,pathToSave,urlHead , cert)
+            self.Create(certificates.getTemplate(),pathToSave,urlHead , cert)
                 

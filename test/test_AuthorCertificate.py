@@ -41,8 +41,8 @@ class test_IssueCertificate(unittest.TestCase):
         self.certificateDataLoder= self.certificateDataLoder.load(certificates ,'names.csv',False)
         self.issue.setQRCodeLocation(1700,10)
         self.issue.setNameLocation(700,440)
-        
-        certificateFile = self.issue.BulkIssue('AnuMDominic.png',pathToSave ,'https://certifyme.online/devopsma/' ,  self.allCertificates )
+        self.allCertificates.setTemplate('./AnuMDominicnew.png')
+        certificateFile = self.issue.BulkIssue(pathToSave ,'https://certifyme.online/devopsma/' ,  self.allCertificates )
         path, dirs, files = next(os.walk(pathToSave))
         file_count = len(files)
         self.assertEqual(file_count,len(certificates))

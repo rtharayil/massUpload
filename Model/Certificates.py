@@ -5,7 +5,7 @@ class AllCertificates:
     # default constructor 
     def __init__(self):         
         self.allCertificates =[]
-       
+        self.template=''
 
 
     
@@ -13,10 +13,13 @@ class AllCertificates:
         return self.allCertificates
 
 
+    def getTemplate(self):
+        return self.template
 
 
-
-
+    def setTemplate(self ,template):
+        self.template =template
+        
 class Certificate:
 
      # default constructor 
