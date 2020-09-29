@@ -3,7 +3,7 @@ import unittest
 from Model.Certificates import Certificate
 from Model.Certificates import AllCertificates
 from CertificateDataLoder import CertificateDataLoder
-from IssueCertificate import IssueCertificate
+from AuthorCertificate import AuthorCertificate
 import shutil  
 
 class test_IssueCertificate(unittest.TestCase):
@@ -12,7 +12,7 @@ class test_IssueCertificate(unittest.TestCase):
     def setUp(self):
         self.allCertificates = AllCertificates()
         self.certificateDataLoder = CertificateDataLoder()
-        self.issue = IssueCertificate()
+        self.issue = AuthorCertificate()
 
     def test_Create(self):
         
@@ -21,7 +21,7 @@ class test_IssueCertificate(unittest.TestCase):
         os.mkdir(pathToSave) 
         certificate =Certificate('Rahul Panday','rahul@panday.com')
         
-        certificateFile = self.issue.Create(395,58,186,200, 'template.png' , './res/Angelica Caroline.ttf' ,pathToSave ,'https://certifyme.online/devopsma/' ,  certificate )
+        certificateFile = self.issue.Create( 'template.png'  ,pathToSave ,'https://certifyme.online/devopsma/' ,  certificate )
         
         self.assertTrue(os.path.exists(pathToSave+ '/'+ certificateFile))
 
@@ -39,13 +39,44 @@ class test_IssueCertificate(unittest.TestCase):
         self.f.close()
         certificates= self.allCertificates.getAllCertificates()
         self.certificateDataLoder= self.certificateDataLoder.load(certificates ,'names.csv',False)
-        self.allCertificates.setQRCodeLocation(1700,10)
-        self.allCertificates.setNameLocation(700,440)
+        self.issue.setQRCodeLocation(1700,10)
+        self.issue.setNameLocation(700,440)
         
-        certificateFile = self.issue.BulkIssue('AnuMDominic.png','./res/Angelica Caroline.ttf' ,pathToSave ,'https://certifyme.online/devopsma/' ,  self.allCertificates )
+        certificateFile = self.issue.BulkIssue('AnuMDominic.png',pathToSave ,'https://certifyme.online/devopsma/' ,  self.allCertificates )
         path, dirs, files = next(os.walk(pathToSave))
         file_count = len(files)
         self.assertEqual(file_count,len(certificates))
+
+
+    def test_QRCodeLocation(self):
+        self.issue.setQRCodeLocation(1000,300)
+        x,y = self.issue.getQRCodeLocation()
+        self.assertEqual(1000,x)
+        self.assertEqual(300,y)
+
+    def test_NameLocation(self):
+        self.issue.setNameLocation(1001,301)
+        x,y = self.issue.getNameLocation()
+        self.assertEqual(1001,x)
+        self.assertEqual(301,y)
+    
+    def test_setQrCodeSize(self):
+        self.issue.setQrCodeSize(5)
+        self.assertEqual(5,self.issue.getQRCodeSize())
+    
+
+    def test_setQRCodeColor(self):
+        self.issue.setQRCodeColor('black','white')
+        back_color, front_color =self.issue.getQRCodeColor()
+        self.assertEqual('black',back_color)
+        self.assertEqual('white',front_color)
+
+    def test_setNameFont(self):
+        self.issue.setNameFont('black',10)
+        font, size =self.issue.getNameFont()
+        self.assertEqual('black',font)
+        self.assertEqual(10,size)
+
 
 
 if __name__ == '__main__':

@@ -34,18 +34,7 @@ class Certificates(unittest.TestCase):
         for c in self.allCertificates.getAllCertificates():
             self.assertEqual('r@gmail.com' ,c.Email())
 
-    def test_QRCodeLocation(self):
-        self.allCertificates.setQRCodeLocation(1000,300)
-        x,y = self.allCertificates.getQRCodeLocation()
-        self.assertEqual(1000,x)
-        self.assertEqual(300,y)
-
-    def test_NameLocation(self):
-        self.allCertificates.setNameLocation(1001,301)
-        x,y = self.allCertificates.getNameLocation()
-        self.assertEqual(1001,x)
-        self.assertEqual(301,y)
-
+    
 
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(Certificates)
