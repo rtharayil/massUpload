@@ -17,7 +17,9 @@ class test_IssueCertificate(unittest.TestCase):
     def test_Create(self):
         
         pathToSave = './temp'
-        shutil.rmtree(pathToSave)
+        if os.path.isdir(pathToSave):
+            shutil.rmtree(pathToSave)
+        
         os.mkdir(pathToSave) 
         certificate =Certificate('Rahul Panday','rahul@panday.com')
         
@@ -28,8 +30,7 @@ class test_IssueCertificate(unittest.TestCase):
     def test_BulkIssue(self):
 
         pathToSave = './temp'
-        shutil.rmtree(pathToSave)
-        os.mkdir(pathToSave)
+        
 
         self.f = open('names.csv', "w")
         self.f.write("No,First Name ,Second Name" +"\n")

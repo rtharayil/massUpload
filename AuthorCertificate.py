@@ -6,6 +6,7 @@ import qrcode
 import sys
 from PIL import Image , ImageDraw ,ImageFont
 import uuid
+import shutil 
 
 
 class AuthorCertificate:
@@ -80,7 +81,7 @@ class AuthorCertificate:
 
         qr.make(fit=True)
 
-        img = qr.make_image(fill_color="transparent", back_color="black")
+        img = qr.make_image(fill_color=self.QRCode_back_color,  back_color=self.QRCode_front_color)
         img.save('./qrcode_test.png')
 
         first_image = Image.open(template)
@@ -88,9 +89,9 @@ class AuthorCertificate:
         first_image.paste(second_image, (self.QRPosX,self.QRPosY),second_image)
 
 
-        image = Image.new("RGBA", (1200,200), (255,255,255,0))
+        image = Image.new("RGBA", (12*self.Fontsize,2*self.Fontsize), (255,255,255,0))
         draw = ImageDraw.Draw(image)
-        font = ImageFont.truetype(self.NameFont, 150)
+        font = ImageFont.truetype(self.NameFont, self.Fontsize)
 
         draw.text((10, 0), certificate.Name(), (0,0,0), font=font)
         #img_resized = image.resize((188,45), Image.ANTIALIAS)
@@ -100,6 +101,11 @@ class AuthorCertificate:
         return unique_filename + '.png'
 
     def BulkIssue(self,pathToSave,urlHead , certificates):
+
+        if os.path.isdir(pathToSave):
+            shutil.rmtree(pathToSave)
+       
+        os.mkdir(pathToSave)
 
        
         for cert in certificates.getAllCertificates():
