@@ -21,9 +21,9 @@ class CertificateDataLoder:
             reader = csv.reader(file, delimiter = ',')
             for row in reader:
                 if email == True :          
-                    certificates.append(Certificate( row[1].strip() + " " + row[2].strip(),row[3].strip()))
+                    certificates.append(Certificate( row[1].strip() , row[2].strip(),row[3].strip()))
                 else :
-                    certificates.append(Certificate( row[1].strip() + " " + row[2].strip(),'NoEmail'))
+                    certificates.append(Certificate( row[1].strip() , row[2].strip(),'NoEmail'))
     
                 
         certificates.pop(0)

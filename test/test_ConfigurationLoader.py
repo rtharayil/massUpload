@@ -31,6 +31,7 @@ class test_ConfigurationLoader(unittest.TestCase):
         self.f.write("Banner : ./banner.png" +"\n")
         self.f.write("CTAMessage : Download our E-Book to learn more" +"\n")
         self.f.write("CTALink : www.q.com" +"\n")
+        self.f.write("CTALabel : Dload"+"\n")
         self.f.write("Phone : 898654423" +"\n")
         self.f.write("Email : a@p.com" +"\n")
         self.f.write("WebLink : www.qt.com" +"\n")
@@ -43,6 +44,8 @@ class test_ConfigurationLoader(unittest.TestCase):
         self.f.write("QRCodeFrontColor : white"+"\n")
         self.f.write("QRCodeBackColor : black"+"\n")
         self.f.write("QRCodeSize : 10"+"\n")
+        self.f.write("EventCode : AgilePCR2021"+"\n")
+        
         self.f.close()  
         self.configurationLoader.loadConfig("config.yaml")      
 
@@ -64,6 +67,11 @@ class test_ConfigurationLoader(unittest.TestCase):
     def test_loadConfig_date(self):        
         
         self.assertEqual('29 dec 1982',self.event.getDate())
+
+    
+    def test_loadConfig_EventCode(self):        
+        
+        self.assertEqual('AgilePCR2021',self.event.getEventCode())
     
     def test_loadConfig_text(self):        
         
@@ -92,6 +100,9 @@ class test_ConfigurationLoader(unittest.TestCase):
         
         self.assertEqual('Download our E-Book to learn more',self.ad.getCTAMessage())
 
+    def test_loadConfig_CTAMessage(self):        
+        
+        self.assertEqual('Dload',self.ad.getButtonLabel())
 
 
     def test_loadConfig_CTALink(self):        

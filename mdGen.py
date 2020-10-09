@@ -20,14 +20,14 @@ class mdGen:
 
     def Create(self,dirToSave,certPath , certificate):
         
-        filePath = './' + dirToSave +'/' + certificate.Name().strip() + '.md'
+        filePath = './' + dirToSave +'/' + certificate.get_FileName() + '.md'
 
         f = open(filePath, "w")
 
         f.write("--- \n")
         f.write("layout : newCert \n")
         f.write("issuedTo: " + certificate.Name()  +"\n")
-        f.write("certificatePath: " + certPath  +"\n")
+        f.write("certificatePath: " + certificate.uri()  +"\n")
         f.write("--- \n")
         f.close()
         return filePath
@@ -44,4 +44,35 @@ class mdGen:
         for cert in certificates.getAllCertificates():
             self.Create(pathToSave,cert_url , cert)
 
+
+    def genDefaults (self,dirToSave,issue , event, ad):
+
+       
+
+        filePath = './' + dirToSave +'/' + 'defaults' + '.yml'
+        f = open(filePath, "w")
+
+        f.write("defaults:\n")
+        f.write("  - \n")
+        f.write("    scope: \n")
+        f.write("      path:"" \n")
+        f.write("      type: "+ event.getEventCode() +  "\n")
+        f.write("    value: \n")
+        f.write("      issuedBy: " + event.getIssuer() + "\n")
+        f.write("      issuedInstitute: " + event.getInstitution() + "\n")
+        f.write("      dateOfIssue: " + event.getDate() + "\n")
+        f.write("      program: " + event.getProgram() + "\n")
+        f.write("      advCTAName: " + ad.getButtonLabel() + "\n")
+        f.write("      advCTALink: " + ad.getCTALink() + "\n")
+        f.write("      CTAText: " + ad.getCTAMessage() + "\n")
+        f.write("      advBGImagelink: " + ad.getBanner() + "\n")
+        f.write("      brandLogo: " + ad.getLogo() + "\n")
+        f.write("      brandMessage: " + ad.getMessage() + "\n")
+        f.write("      contactPh_number: " + str(ad.getPhone()) + "\n")
+        f.write("      contactEmail: " + ad.getEmail() + "\n")
+        f.write("      contactCompanyWebSiteLink: " + ad.getWebLink() + "\n")
+        f.write("      text: " + event.getText() + "\n")
+
+        f.close() 
+        return filePath
         

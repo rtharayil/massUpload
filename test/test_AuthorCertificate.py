@@ -21,7 +21,7 @@ class test_IssueCertificate(unittest.TestCase):
             shutil.rmtree(pathToSave)
         
         os.mkdir(pathToSave) 
-        certificate =Certificate('Rahul Panday','rahul@panday.com')
+        certificate =Certificate('Rahul', 'Panday','rahul@panday.com')
         
         certificateFile = self.issue.Create( 'template.png'  ,pathToSave ,'https://certifyme.online/devopsma/' ,  certificate )
         
@@ -34,15 +34,17 @@ class test_IssueCertificate(unittest.TestCase):
 
         self.f = open('names.csv', "w")
         self.f.write("No,First Name ,Second Name" +"\n")
-        self.f.write("1 ,ranjith, tharayil " +"\n")
-        self.f.write("2 ,anju, M dominic " +"\n")
+        self.f.write("1 ,Ranjith, Tharayil " +"\n")
+        self.f.write("2 ,Anju, M Dominic " +"\n")
         self.f.write("3 ,Suraj, Meaheta " +"\n")
         self.f.close()
         certificates= self.allCertificates.getAllCertificates()
         self.certificateDataLoder= self.certificateDataLoder.load(certificates ,'names.csv',False)
-        self.issue.setQRCodeLocation(1700,10)
-        self.issue.setNameLocation(700,440)
-        self.allCertificates.setTemplate('./AnuMDominicnew.png')
+        self.issue.setQRCodeLocation(400,700)
+        self.issue.setNameLocation(739,274)
+        self.issue.setQrCodeSize(3)
+        self.issue.setNameFont('./res/Font Pack/Ubuntu-B.ttf',50)
+        self.allCertificates.setTemplate('./AgileNCR_Participation.png')
         certificateFile = self.issue.BulkIssue(pathToSave ,'https://certifyme.online/devopsma/' ,  self.allCertificates )
         path, dirs, files = next(os.walk(pathToSave))
         file_count = len(files)

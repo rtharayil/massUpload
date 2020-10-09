@@ -23,7 +23,8 @@ class ConfigurationLoader:
         self.event.setIssuer(parsed_yaml_file["IssuedBy"])
         self.event.setInstitution(parsed_yaml_file["Institution"])
         self.event.setDate(parsed_yaml_file["Date"])
-        self.event.setText(parsed_yaml_file["Text"])
+        self.event.setText(parsed_yaml_file["Text"]) 
+        self.event.setEventCode(parsed_yaml_file["EventCode"])
 
         self.certificates.setTemplate(parsed_yaml_file["Template"])
 
@@ -35,6 +36,7 @@ class ConfigurationLoader:
         self.ad.setPhone(parsed_yaml_file["Phone"])
         self.ad.setEmail(parsed_yaml_file["Email"])
         self.ad.setWebLink(parsed_yaml_file["WebLink"])
+        self.ad.setButtonLabel(parsed_yaml_file["CTALabel"])
 
         self.issuer.setNameFont(parsed_yaml_file["Font"], parsed_yaml_file["FontSize"])
         self.issuer.setNameLocation(parsed_yaml_file["NameX"],parsed_yaml_file["NameY"])
