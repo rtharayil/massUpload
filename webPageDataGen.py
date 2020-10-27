@@ -36,9 +36,9 @@ class webPageDataGen:
         self.ad = Advertisement()
         self.configurationLoader = ConfigurationLoader(self.event,self.allCertificates,self.issue,self.ad)
         
-        self.configurationLoader.loadConfig("config1.yaml") 
+        self.configurationLoader.loadConfig("./test/data/config1.yaml") 
         certificates= self.allCertificates.getAllCertificates()
-        self.certificateDataLoder= self.certificateDataLoder.load(certificates ,'names1.csv',False)   
+        self.certificateDataLoder= self.certificateDataLoder.load(certificates ,'./test/data/names1.csv',False)   
 
               
 

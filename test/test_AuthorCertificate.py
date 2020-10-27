@@ -23,7 +23,7 @@ class test_IssueCertificate(unittest.TestCase):
         os.mkdir(pathToSave) 
         certificate =Certificate('Rahul', 'Panday','rahul@panday.com')
         
-        certificateFile = self.issue.Create( 'template.png'  ,pathToSave ,'https://certifyme.online/devopsma/' ,  certificate )
+        certificateFile = self.issue.Create( './test/data/template.png'  ,pathToSave ,'https://certifyme.online/devopsma/' ,  certificate )
         
         self.assertTrue(os.path.exists(pathToSave+ '/'+ certificateFile))
 
@@ -44,7 +44,7 @@ class test_IssueCertificate(unittest.TestCase):
         self.issue.setNameLocation(739,274)
         self.issue.setQrCodeSize(3)
         self.issue.setNameFont('./res/Font Pack/Ubuntu-B.ttf',50)
-        self.allCertificates.setTemplate('./AgileNCR_Participation.png')
+        self.allCertificates.setTemplate('./test/data/AgileNCR_Participation.png')
         certificateFile = self.issue.BulkIssue(pathToSave ,'https://certifyme.online/devopsma/' ,  self.allCertificates )
         path, dirs, files = next(os.walk(pathToSave))
         file_count = len(files)

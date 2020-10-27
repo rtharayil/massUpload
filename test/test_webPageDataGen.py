@@ -40,7 +40,7 @@ class test_webPageDataGen(unittest.TestCase):
         self.f.write("Institution : Quadralogics" +"\n") 
         self.f.write("Date : 29 dec 1982" +"\n") 
         self.f.write("Text : A write-up about the event" +"\n") 
-        self.f.write("Template : AgileNCR_Participation.png" +"\n") 
+        self.f.write("Template : ./test/data/AgileNCR_Participation.png" +"\n") 
         self.f.write("Logo : ./logo.png" +"\n")
         self.f.write("Message : As your organizations progresses through its DevXOps journey, what are the best practices that successful teams use that you should follow? Discover what separates successful DevXOps teams from those that fail, and learn the next steps to take on your DevXOps journey" +"\n")
         self.f.write("Banner : ./banner.png" +"\n")
@@ -76,7 +76,7 @@ class test_webPageDataGen(unittest.TestCase):
         
               
         
-        certificateFile = self.webPageDataGen.generate('names.csv','config.yaml' )
+        certificateFile = self.webPageDataGen.generate('./test/data/names.csv','./test/data/config.yaml' )
 
         file_count =0
 

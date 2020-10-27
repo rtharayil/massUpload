@@ -3,7 +3,7 @@ IssuedBy : Anju M Dominic
 Institution : Quadralogics
 Date : 29 dec 1982
 Text : A write-up about the event
-Template : AgileNCR_Participation.png
+Template : ./test/data/AgileNCR_Participation.png
 Logo : ./logo.png
 Message : As your organizations progresses through its DevXOps journey, what are the best practices that successful teams use that you should follow? Discover what separates successful DevXOps teams from those that fail, and learn the next steps to take on your DevXOps journey
 Banner : ./banner.png
