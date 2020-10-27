@@ -13,6 +13,7 @@ class Advertisement:
         self.phone= ''
         self.email =''
         self.webLink =''
+        self.bLabel =''
 
   
 
@@ -41,6 +42,8 @@ class Advertisement:
     def setWebLink(self,link):
         self.webLink = link
 
+    def setButtonLabel(self,link):
+        self.bLabel = link
 
 
         
@@ -67,3 +70,6 @@ class Advertisement:
 
     def getWebLink(self):
         return self.webLink
+
+    def getButtonLabel(self):
+        return self.bLabel

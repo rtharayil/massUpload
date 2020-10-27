@@ -83,7 +83,7 @@ class test_webPageDataGen(unittest.TestCase):
         if os.path.isdir('./webPageDataGen'):
             path, dirs, files = next(os.walk('./webPageDataGen'))
             file_count = len(files)
-        self.assertEqual(file_count,2)
+        self.assertTrue(file_count>=2)
 
 
     

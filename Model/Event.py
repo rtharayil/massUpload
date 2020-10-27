@@ -9,6 +9,7 @@ class AnEvent:
         self.institution=''
         self.date =''
         self.text =''
+        self.code =''
 
 
     def setProgram(self ,programe):
@@ -26,9 +27,15 @@ class AnEvent:
     def setText(self ,text):
         self.text = text 
 
+    def setEventCode(self ,code):
+        self.code = code 
+
        
     def getProgram(self):
         return self.programName
+
+    def getEventCode(self):
+        return self.code
     
     def getIssuer(self):
         return self.issuedBy
