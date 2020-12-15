@@ -1,0 +1,26 @@
+Program : Regional Scrum Gathering℠ Kolkata
+IssuedBy : Arijit Sarbagna
+Institution : Agile of East
+Date : 01-Nov-2020
+Text : TRegional Scrum Gatherings℠ is an opportunity to connect with like-minded agile and Scrum practitioners, trainers, coaches, and enthusiasts. Hear amazing keynote speakers, participate in Coaching Clinics, CSP Lounges, Networking Sessions and more. And one also earns Scrum Education Units (SEUs) for attending. Regional Scrum Gatherings℠ are organized and hosted by local/regional agilists, so each one is truly a unique and valuable experience! And we are thankful to our distinguished speakers - who have kindly agreed to share their valuable time and experience with the event participants. This certificate/badge is a small token of appreciation towards their kind gesture.
+Template : ./test/data/testFlix/testflix.png
+Logo : https://certifyme.online/img/cert/AgileNCR/banner.jpeg
+Message :  Regional Scrum Gathering Kolkata 2021
+Banner : https://certifyme.online/img/cert/AgileNCR/ranjiththarayil_4ee3d.png
+CTAMessage : Listen, Share and Subscribe to AgileCast
+CTALink : https://youtu.be/ZwPNe2vWXfE
+CTALabel : Register Now
+Phone : nul
+Email : nul
+WebLink : https://rsgkol.zoneconnect.in/
+Font : ./res/Font Pack/Ubuntu-B.ttf
+FontSize : 30
+NameX : 590
+NameY : 240
+QRCodeX : 0
+QRCodeY : 159
+QRCodeFrontColor : transparent
+QRCodeBackColor : black
+QRCodeSize : 3
+EventCode: TestFlix
+

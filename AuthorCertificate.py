@@ -91,7 +91,7 @@ class AuthorCertificate:
         img.save('./qrcode_test.png')
         first_image = Image.open(template)
         second_image = Image.open("./qrcode_test.png")
-        first_image.paste(second_image, (self.QRPosX,self.QRPosY),second_image)
+        #first_image.paste(second_image, (self.QRPosX,self.QRPosY),second_image)
         
         image = Image.new("RGBA", (1200 ,200), (255,255,255,0))
         draw = ImageDraw.Draw(image)
@@ -102,8 +102,8 @@ class AuthorCertificate:
         
         draw = ImageDraw.Draw(image)
        
-
-        draw.text((10, 0), certificate.Name(), (0,0,0), font=font)
+        draw.text((10, 0), certificate.Name(), (252,252,252), font=font)
+        # draw.text((10, 0), certificate.Name(), (0,0,0), font=font)
         #img_resized = image.resize((188,45), Image.ANTIALIAS)
         first_image.paste(image, (int(self.NamePosX-(width/2)),int(self.NamePosY-(height/2))),image)
 

@@ -14,13 +14,13 @@ Phone : +31 (0)35 538 1921
 Email : info@xebia.com
 WebLink : www.xebia.com
 Font : ./res/Font Pack/Ubuntu-B.ttf
-FontSize : 50
-NameX : 540
-NameY : 206
-QRCodeX : 1050
-QRCodeY : 417
-QRCodeFrontColor : black
-QRCodeBackColor : white
-QRCodeSize : 3
+FontSize : 30
+NameX : 700
+NameY : 207
+QRCodeX : 420
+QRCodeY : 535
+QRCodeFrontColor : transparent
+QRCodeBackColor : black
+QRCodeSize : 2
 EventCode: agilencr2020
 

@@ -76,7 +76,7 @@ class test_webPageDataGen(unittest.TestCase):
         
               
         
-        certificateFile = self.webPageDataGen.generate('./test/data/names.csv','./test/data/config.yaml' )
+        certificateFile = self.webPageDataGen.generate('./test/data/data/RSGI/t.csv','./test/data/RSGI/config1.yaml' )
 
         file_count =0
 
@@ -86,7 +86,15 @@ class test_webPageDataGen(unittest.TestCase):
         self.assertTrue(file_count>=2)
 
 
-    
+    def test_generateBadge(self):
+        certificateFile = self.webPageDataGen.generateBadge('./test/data/data/RSGI/t.csv','./test/data/RSGI/config1.yaml' )
+
+        file_count =0
+
+        if os.path.isdir('./webPageDataGen'):
+            path, dirs, files = next(os.walk('./webPageDataGen'))
+            file_count = len(files)
+        self.assertTrue(file_count>=2)
 
 
 if __name__ == '__main__':

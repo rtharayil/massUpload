@@ -1,0 +1,25 @@
+Program : "#ATAGTR2020 - Global Testing Retreat"
+IssuedBy : "#ATAGTR2020 Program Committee"
+Institution : Agile Testing Alliance
+Date : 28-Oct-2020
+Text : "#ATAGTR2020 Global Testing Conference is back again in its 5th edition with more fun and more learnings. Conference is scheduled for 12th and 13th December 2020. We have 2 full days with minimum 3 parallel tracks on both the days. 60+ speakers more than 40 Interactive sessions and Talks and Live Labs."
+Template : ./test/data/AgileNCR_Participation.png
+Logo : https://certifyme.online/img/cert/sample/logo.png
+Message :  "#ATAGTR2020 Global Testing Conference is back again in its 5th edition with more fun and more learnings. Be a part of #ATAGTR2020 ."
+Banner : https://certifyme.online/img/cert/sample/baner.jpg
+CTAMessage : "Be a part of #ATAGTR2020, Register Now"
+CTALink : https://gtr.agiletestingalliance.org/
+CTALabel : Know more
+Phone : +91 8433919049 
+Email : ATAsupport@AgileTestingAlliance.org
+WebLink : nul
+Font : ./res/Font Pack/Ubuntu-B.ttf
+FontSize : 50
+NameX : 739
+NameY : 274
+QRCodeX : 400
+QRCodeY : 700
+QRCodeFrontColor : transparent
+QRCodeBackColor : black
+QRCodeSize : 3
+EventCode: ATAGTR2020

@@ -33,6 +33,22 @@ class mdGen:
         return filePath
 
  
+    def CreateMDForBadge(self,eventCode,dirToSave,urlHead , certificate):
+        unique_filename = certificate.genCertFileName()+ "_"+str(uuid.uuid4().hex)[0:5]
+        url = urlHead +  eventCode  + "/"+ unique_filename +".html"
+        certificate.set_webURL(url)
+        certificate.set_fileName(unique_filename)
+        filePath = './' + dirToSave +'/' + certificate.get_FileName() + '.md'
+
+        f = open(filePath, "w")
+
+        f.write("--- \n")
+        f.write("layout : newBadge \n")
+        f.write("issuedTo: " + certificate.Name()  +"\n")
+      
+        f.write("--- \n")
+        f.close()
+        return filePath
 
     def genMDBulkIssue(self,pathToSave,cert_url , certificates):
 
@@ -43,6 +59,16 @@ class mdGen:
        
         for cert in certificates.getAllCertificates():
             self.Create(pathToSave,cert_url , cert)
+
+    def genMDBulkIssueBadge(self,pathToSave,eventCode,cert_url , certificates):
+
+        if os.path.isdir(pathToSave):
+            shutil.rmtree(pathToSave)
+        os.mkdir(pathToSave)
+
+       
+        for cert in certificates.getAllCertificates():
+            self.CreateMDForBadge(eventCode ,pathToSave,cert_url , cert)
 
 
     def genDefaults (self,dirToSave,issue , event, ad):
@@ -55,9 +81,9 @@ class mdGen:
         f.write("defaults:\n")
         f.write("  - \n")
         f.write("    scope: \n")
-        f.write("      path:"" \n")
+        f.write("      path: "" \n")
         f.write("      type: "+ event.getEventCode() +  "\n")
-        f.write("    value: \n")
+        f.write("    values: \n")
         f.write("      issuedBy: " + event.getIssuer() + "\n")
         f.write("      issuedInstitute: " + event.getInstitution() + "\n")
         f.write("      dateOfIssue: " + event.getDate() + "\n")

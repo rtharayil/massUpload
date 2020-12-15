@@ -3,8 +3,8 @@ IssuedBy : Ajay Kabra
 Institution : AgileNCR2020
 Date : 29 Nov 2020
 Text : This certificate is issued for part participating  AgileNCR 2020 . This year's theme for the conference was HUMANIZING BUSINESS INNOVATION. Agile Manifesto always emphasized individuals & interactions and we all know that when people are adaptive, then the organization is adaptive too. Humans are the biggest contributors in bringing Business Agility and in this remote working year and new normal, it is people and their innovative ideas that would drive organizations and their businesses to sustain and shine.
-Template : ./test/data/AGILENCR/design.png
-Logo : https://certifyme.online/img/cert/AgileNCR/banner.jpeg
+Template : ./test/data/SYNAPSE/design.png
+Logo : https://certifyme.online/img/cert/SYNAPSE/banner.jpeg
 Message :  AgileCast ,India's premiere podcast on Agile led technologies. Sharing knowledge is in Xebia's DNA and staying true to this value, practitioners from XACT (Xebia Agile Consulting and Transformation) share their experience and knowledge on current and trending topics related to Agile on AgileCast. A podcast dedicated to science and practice of Agile
 Banner : https://certifyme.online/img/cert/AgileNCR/ranjiththarayil_4ee3d.png
 CTAMessage : Listen, Share and Subscribe to AgileCast
@@ -14,13 +14,13 @@ Phone : +31 (0)35 538 1921
 Email : info@xebia.com
 WebLink : www.xebia.com
 Font : ./res/Font Pack/Ubuntu-B.ttf
-FontSize : 50
-NameX : 540
-NameY : 206
-QRCodeX : 1050
-QRCodeY : 417
-QRCodeFrontColor : black
-QRCodeBackColor : white
-QRCodeSize : 3
-EventCode: agilencr2020
+FontSize : 40
+NameX : 840
+NameY : 330
+QRCodeX : 420
+QRCodeY : 550
+QRCodeFrontColor : transparent
+QRCodeBackColor : black
+QRCodeSize : 2
+EventCode: award
 
